@@ -39,6 +39,7 @@ helloWorld = """
      <h1>4. Nadia :D</h1>
      <h1>5. Nikoś :D</h1>
      <h2>Zapraszmy jutro! Our lottery is open all-time</h2>
+     <h2>Moze uda sie cos wygrac - commit/deploy test</h2>
   </div>
 </body>
 </html>
