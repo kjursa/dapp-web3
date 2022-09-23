@@ -30,16 +30,8 @@ helloWorld = """
 </head>
 <body>
   <div>
-    <h2>Witamy na stronie najwiekszych aniołków!</h2>
+    <h2>Witamy na naszej stronie!</h2>
     <img src="/static/sammytheshark.gif" />
-    <h2>Ranking:</h2>
-     <h1>1. Madzia :D</h1>
-     <h1>2. Kornel :D</h1>
-     <h1>3. Natan :D</h1>
-     <h1>4. Nadia :D</h1>
-     <h1>5. Nikoś :D</h1>
-     <h2>Zapraszmy jutro! Our lottery is open all-time</h2>
-     <h2>Moze uda sie cos wygrac - commit/deploy test</h2>
   </div>
 </body>
 </html>
