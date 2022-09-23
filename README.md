@@ -2,3 +2,5 @@
 
 Frontent for Smart Lottery.
 Application written in Django.  
+
+Awesome app!
