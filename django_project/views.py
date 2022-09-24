@@ -39,3 +39,8 @@ helloWorld = """
 
 def index(request):
     return HttpResponse(helloWorld.replace("{IPADDRESS}",request.get_host()))
+
+
+def test(request):
+    return HttpResponse("hELLO WORLD")
+
