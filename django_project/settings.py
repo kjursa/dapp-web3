@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import netifaces
+# import netifaces
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,12 +29,12 @@ DEBUG = True
 # Find out what the IP addresses are at run time
 # This is necessary because otherwise Gunicorn will reject the connections
 def ip_addresses():
-    ip_list = []
-    for interface in netifaces.interfaces():
-        addrs = netifaces.ifaddresses(interface)
-        for x in (netifaces.AF_INET, netifaces.AF_INET6):
-            if x in addrs:
-                ip_list.append(addrs[x][0]['addr'])
+    ip_list = ["207.154.207.135", "127.0.0.1"]
+    # for interface in netifaces.interfaces():
+    #     addrs = netifaces.ifaddresses(interface)
+    #     for x in (netifaces.AF_INET, netifaces.AF_INET6):
+    #         if x in addrs:
+    #             ip_list.append(addrs[x][0]['addr'])
     return ip_list
 
 ALLOWED_HOSTS = ip_addresses()
@@ -86,15 +86,15 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': '9d91026900644b90f7b7a070fd45c9b5',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'},
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'django',
+    #     'USER': 'django',
+    #     'PASSWORD': '9d91026900644b90f7b7a070fd45c9b5',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    #     'OPTIONS': {'sslmode': 'require'},
+    # }
 }
 
 
@@ -134,8 +134,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+PROJECT_DIR = os.path.join(BASE_DIR, 'django_project')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = (
-	os.path.join(BASE_DIR, 'static'),
+    os.path.join(PROJECT_DIR, 'static'),
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
